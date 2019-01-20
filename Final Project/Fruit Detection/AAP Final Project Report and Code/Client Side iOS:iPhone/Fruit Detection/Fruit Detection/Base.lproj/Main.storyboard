@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4Mu-fs-VnA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="FruitDetectionStoryboard" id="vXZ-lx-hvc" customClass="ViewController" customModule="Fruit_Detection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q83-th-e1u">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2IZ-rT-MrL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Take Picture of your Unknown Fruit">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePictureFromCamera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ic2-yF-UEC"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" alpha="0.01" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="X3p-dR-HxS">
+                                <rect key="frame" x="16" y="28" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Online Prediction"/>
+                                    <segment title="Offline Prediction"/>
+                                </segments>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="fruit_placeholder_2" translatesAutoresizingMaskIntoConstraints="NO" id="Nvv-YK-Ksg">
+                                <rect key="frame" x="16" y="171" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="KSn-mc-7Xr"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="343" id="kpV-PP-p3G"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction is :                                " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYM-6z-35u">
+                                <rect key="frame" x="16" y="88" width="343" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="goT-0p-mdM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cX8-ht-jyk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DdA-9c-P5y">
+                                        <rect key="frame" x="169" y="305" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="X3p-dR-HxS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="8YH-jZ-L7M"/>
+                            <constraint firstItem="Nvv-YK-Ksg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="9bo-Qu-Yt6"/>
+                            <constraint firstItem="BYM-6z-35u" firstAttribute="top" secondItem="X3p-dR-HxS" secondAttribute="bottom" constant="32" id="Azi-zF-3dg"/>
+                            <constraint firstItem="BYM-6z-35u" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="IvC-NO-6eL"/>
+                            <constraint firstItem="Nvv-YK-Ksg" firstAttribute="top" secondItem="BYM-6z-35u" secondAttribute="bottom" constant="32" id="Ixh-V5-CIW"/>
+                            <constraint firstItem="cX8-ht-jyk" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Ldl-Px-eNP"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cX8-ht-jyk" secondAttribute="bottom" id="bPI-Nb-L1s"/>
+                            <constraint firstAttribute="trailing" secondItem="X3p-dR-HxS" secondAttribute="trailing" constant="16" id="cyH-DU-vFu"/>
+                            <constraint firstAttribute="trailing" secondItem="Q83-th-e1u" secondAttribute="trailing" id="d1f-9T-CYr"/>
+                            <constraint firstItem="cX8-ht-jyk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gAH-66-4j3"/>
+                            <constraint firstAttribute="trailing" secondItem="Nvv-YK-Ksg" secondAttribute="trailing" constant="16" id="i5s-S1-dgd"/>
+                            <constraint firstItem="X3p-dR-HxS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="klc-ps-o6i"/>
+                            <constraint firstAttribute="trailing" secondItem="BYM-6z-35u" secondAttribute="trailing" constant="16" id="lG8-1S-m3O"/>
+                            <constraint firstItem="Nvv-YK-Ksg" firstAttribute="top" secondItem="BYM-6z-35u" secondAttribute="bottom" constant="32" id="nql-sd-3iu"/>
+                            <constraint firstAttribute="trailing" secondItem="cX8-ht-jyk" secondAttribute="trailing" id="r0V-1n-nbP"/>
+                            <constraint firstItem="BYM-6z-35u" firstAttribute="top" secondItem="X3p-dR-HxS" secondAttribute="bottom" constant="32" id="sCR-br-Cem"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Q83-th-e1u" secondAttribute="bottom" id="sHi-8j-wyE"/>
+                            <constraint firstItem="Q83-th-e1u" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="z1b-bL-fw7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="cX8-ht-jyk" id="u1Z-63-uvg"/>
+                        <outlet property="buttonTakePicture" destination="Q83-th-e1u" id="0Hm-WL-S4c"/>
+                        <outlet property="imageViewRPS" destination="Nvv-YK-Ksg" id="kt7-SB-6UR"/>
+                        <outlet property="labelPredition" destination="BYM-6z-35u" id="bRW-ML-sgV"/>
+                        <outlet property="segment" destination="X3p-dR-HxS" id="Y5l-DY-1mU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1263.2" y="264.91754122938534"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="zrQ-2C-Fh3">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="OR3-uQ-yPQ" customClass="SettingsViewController" customModule="Fruit_Detection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Vq-oq-2dE"/>
+                        <viewControllerLayoutGuide type="bottom" id="V13-i5-3uR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1NR-1X-ZUf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGP-g4-i2j">
+                                <rect key="frame" x="0.0" y="625" width="375" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Save Information"/>
+                                <connections>
+                                    <action selector="saveInformation:" destination="OR3-uQ-yPQ" eventType="touchUpInside" id="b0j-N0-uDx"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a DSID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAt-Ge-8nf">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter IP Address and Port" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efX-k3-p3R">
+                                <rect key="frame" x="16" y="78" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="efX-k3-p3R" firstAttribute="leading" secondItem="1NR-1X-ZUf" secondAttribute="leading" constant="16" id="229-xk-PBc"/>
+                            <constraint firstAttribute="trailing" secondItem="UAt-Ge-8nf" secondAttribute="trailing" constant="16" id="NT3-Rj-vB8"/>
+                            <constraint firstItem="V13-i5-3uR" firstAttribute="top" secondItem="sGP-g4-i2j" secondAttribute="bottom" id="Sxa-Eb-bOe"/>
+                            <constraint firstItem="efX-k3-p3R" firstAttribute="top" secondItem="UAt-Ge-8nf" secondAttribute="bottom" constant="20" id="Xz2-yF-l5o"/>
+                            <constraint firstItem="UAt-Ge-8nf" firstAttribute="leading" secondItem="1NR-1X-ZUf" secondAttribute="leading" constant="16" id="b2D-wg-J3l"/>
+                            <constraint firstAttribute="trailing" secondItem="sGP-g4-i2j" secondAttribute="trailing" id="bDZ-Bb-7Ci"/>
+                            <constraint firstAttribute="trailing" secondItem="efX-k3-p3R" secondAttribute="trailing" constant="16" id="c7h-cL-pp0"/>
+                            <constraint firstItem="sGP-g4-i2j" firstAttribute="leading" secondItem="1NR-1X-ZUf" secondAttribute="leading" id="fLc-67-dkq"/>
+                            <constraint firstItem="UAt-Ge-8nf" firstAttribute="top" secondItem="5Vq-oq-2dE" secondAttribute="bottom" constant="8" id="oWa-S6-UiA"/>
+                            <constraint firstItem="efX-k3-p3R" firstAttribute="top" secondItem="UAt-Ge-8nf" secondAttribute="bottom" constant="20" id="uWF-eD-iIW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonSave" destination="sGP-g4-i2j" id="lpf-6S-yTU"/>
+                        <outlet property="textViewDSID" destination="UAt-Ge-8nf" id="nwk-0Z-i8Y"/>
+                        <outlet property="textViewIPAddress" destination="efX-k3-p3R" id="jtr-Q7-ibj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7J-pP-4Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1261.5999999999999" y="1005.2473763118442"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="abn-V8-JHF">
+            <objects>
+                <tableViewController id="Ayw-as-Jr1" customClass="TableViewController" customModule="Fruit_Detection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EOc-vc-Kgg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" id="LOZ-Qa-V32">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LOZ-Qa-V32" id="tLP-gO-h1L">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ayw-as-Jr1" id="XTp-uB-1JP"/>
+                            <outlet property="delegate" destination="Ayw-as-Jr1" id="0yR-xL-xD4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="o11-b3-lI1"/>
+                    <connections>
+                        <outlet property="tableViewModule" destination="EOc-vc-Kgg" id="jLg-qi-DB6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tf-EX-pJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527.20000000000005" y="389.95502248875567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rrh-wk-KBf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Mu-fs-VnA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jZT-3F-k1S">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ayw-as-Jr1" kind="relationship" relationship="rootViewController" id="uP5-vZ-QNV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bj-bj-sk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="389.95502248875567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fruit_placeholder_2" width="3818" height="2540"/>
+    </resources>
+</document>
